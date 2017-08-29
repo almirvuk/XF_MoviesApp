@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XF_MoviesApp.Views.MoviesListPage">
+             x:Class="XF_MoviesApp.Views.MoviesListPage"
+             Title="All Movies">
 
     <ContentPage.Content>
 
@@ -16,15 +17,20 @@
                         <Grid>
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
+                                <ColumnDefinition  Width="Auto"/>
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <Image Grid.Column="0" 
+                                
+                            <Image Grid.Column="0"
+                                         Margin="2"
+                                   
                                    HeightRequest="120"
                                    Source="{Binding PhotoUrl}" />
 
-                            <StackLayout Grid.Column="1" Padding="4">
+                            <StackLayout Grid.Column="1" Padding="4"
+                                         Margin="2"
+                                         HorizontalOptions="Start">
 
                                 <Label Text="{Binding Title}" 
                                        FontSize="Medium"/>
