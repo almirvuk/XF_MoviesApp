@@ -5,8 +5,24 @@
 
     <ContentPage.Content>
 
+        <!-- ListView-->
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+
+            <Image Grid.Column="0"
+                   HeightRequest="120"
+                   />
+
+        </Grid>
         
-        
+        <!-- ListView-->
+
     </ContentPage.Content>
 </ContentPage>
 
