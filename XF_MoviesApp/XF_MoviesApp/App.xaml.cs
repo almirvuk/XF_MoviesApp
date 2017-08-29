@@ -12,7 +12,7 @@ namespace XF_MoviesApp {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new XF_MoviesApp.Views.TestPage());
+            MainPage = new NavigationPage(new XF_MoviesApp.Views.MoviesListPage());
         }
 
         protected override void OnStart() {
