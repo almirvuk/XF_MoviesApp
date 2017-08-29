@@ -154,6 +154,18 @@ namespace XF_MoviesApp.FakeService {
                     PhotoUrl = "http://image.tmdb.org/t/p/w185/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg"
                 },
 
+                 new Movie(){
+
+                    DirectorId = 1,
+                    Director = Directors.Where(x => x.DirectorId == 1).FirstOrDefault(),
+                    Genre = Genres.Where(x => x.GenreId == 4).FirstOrDefault(),
+                    GenreId = 4,
+                    MovieId = 5,
+                    Title = "Goodfellas",
+                    Year = 1990,
+                    PhotoUrl = "https://image.tmdb.org/t/p/original/pwpGfTImTGifEGgLb3s6LRPd4I6.jpg"
+                },
+
             };
 
             MoviesActors = new List<MovieActor>() {
@@ -242,6 +254,33 @@ namespace XF_MoviesApp.FakeService {
                     ActorId = 1,
                     Actor = Actors.Where(x => x.ActorId == 1).FirstOrDefault(),
                     MovieActorId = 10
+                },
+
+                new MovieActor(){
+
+                    MovieId = 5,
+                    Movie = Movies.Where(x => x.MovieId == 5).FirstOrDefault(),
+                    ActorId = 1,
+                    Actor = Actors.Where(x => x.ActorId == 1).FirstOrDefault(),
+                    MovieActorId = 11
+                },
+
+                new MovieActor(){
+
+                    MovieId = 5,
+                    Movie = Movies.Where(x => x.MovieId == 5).FirstOrDefault(),
+                    ActorId = 2,
+                    Actor = Actors.Where(x => x.ActorId == 2).FirstOrDefault(),
+                    MovieActorId = 12
+                },
+
+                new MovieActor(){
+
+                    MovieId = 5,
+                    Movie = Movies.Where(x => x.MovieId == 5).FirstOrDefault(),
+                    ActorId = 3,
+                    Actor = Actors.Where(x => x.ActorId == 3).FirstOrDefault(),
+                    MovieActorId = 13
                 },
 
             };
