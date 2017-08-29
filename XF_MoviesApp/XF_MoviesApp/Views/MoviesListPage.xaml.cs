@@ -17,6 +17,8 @@ namespace XF_MoviesApp.Views
 		{
 			InitializeComponent ();
 
+            BindingContext = new MoviesListViewModel();
 		}
-	}
+        
+    }
 }

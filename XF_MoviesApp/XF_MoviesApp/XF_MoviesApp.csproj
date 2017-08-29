@@ -50,6 +50,7 @@
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\MoviesListViewModel.cs" />
     <Compile Include="Views\MoviesListPage.xaml.cs">
       <DependentUpon>MoviesListPage.xaml</DependentUpon>
     </Compile>

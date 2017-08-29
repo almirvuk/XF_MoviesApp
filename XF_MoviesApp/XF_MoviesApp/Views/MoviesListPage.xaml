@@ -5,23 +5,48 @@
 
     <ContentPage.Content>
 
-        <!-- ListView-->
+        <ListView
+                ItemsSource="{Binding Movies}" 
+                HasUnevenRows="True"
+                RowHeight="125">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
 
-        <Grid>
+                        <Grid>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" 
+                                   HeightRequest="120"
+                                   Source="{Binding PhotoUrl}" />
+
+                            <StackLayout Grid.Column="1" Padding="4">
+
+                                <Label Text="{Binding Title}" 
+                                       FontSize="Medium"/>
+
+                                <Label  Text="{Binding Year}" 
+                                        FontSize="Small"/>
+
+                                <Label Text="{Binding Director.FullName}" 
+                                       FontSize="Small"/>
+
+                            </StackLayout>
+
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
 
 
-            <Image Grid.Column="0"
-                   HeightRequest="120"
-                   />
 
-        </Grid>
-        
-        <!-- ListView-->
 
     </ContentPage.Content>
 </ContentPage>
