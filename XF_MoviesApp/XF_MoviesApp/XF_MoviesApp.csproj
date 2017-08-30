@@ -49,6 +49,7 @@
     <Compile Include="Models\MovieActor.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAL\GenresService.cs" />
     <Compile Include="SAL\MovieService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MovieDetailsViewModel.cs" />

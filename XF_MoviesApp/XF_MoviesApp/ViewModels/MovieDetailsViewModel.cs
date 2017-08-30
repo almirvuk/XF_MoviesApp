@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XF_MoviesApp.FakeService;
 using XF_MoviesApp.Models;
 using XF_MoviesApp.SAL;
 
@@ -52,9 +54,17 @@ namespace XF_MoviesApp.ViewModels {
         }
 
 
+        private ObservableCollection<Actor> actors;
+        public ObservableCollection<Actor> Actors {
+            get { return actors; }
+            set { actors = value; }
+        }
+
+        MovieService movieService ;
+
         public MovieDetailsViewModel(int movieId) {
 
-            MovieService movieService = new MovieService();
+            movieService = new MovieService();
             Movie movie = movieService.GetMovieById(movieId);
 
             Init(movie);
@@ -68,6 +78,9 @@ namespace XF_MoviesApp.ViewModels {
 
             DirectorName = movie.Director.FullName;
             DirectorPhotoUrl = movie.Director.PhotoUrl;
+
+            var allActors = movieService.GetAllActorsById(movie.MovieId);
+            Actors = new ObservableCollection<Actor>(allActors);
         }
 
     }

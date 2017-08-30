@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XF_MoviesApp.Models;
 using XF_MoviesApp.ViewModels;
 
 namespace XF_MoviesApp.Views
@@ -19,6 +20,13 @@ namespace XF_MoviesApp.Views
 
             BindingContext = new MoviesListViewModel();
 		}
-        
+
+        private void OpenDetailsPage(object sender, ItemTappedEventArgs e) {
+
+            var movie = (Movie)e.Item;
+
+            if (movie != null)
+                Navigation.PushAsync(new MovieDetailsPage(movie.MovieId));
+        }
     }
 }

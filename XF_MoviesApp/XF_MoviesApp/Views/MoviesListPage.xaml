@@ -4,12 +4,38 @@
              x:Class="XF_MoviesApp.Views.MoviesListPage"
              Title="All Movies">
 
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+            Text="Search"
+            Icon="ic_search.png"
+            Command="{Binding ShowSearchItemsCommand}"
+            />
+
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
-        <ListView
+        <StackLayout>
+            <StackLayout IsVisible="{Binding SearchItemsVisibility}">
+
+                <Picker ItemsSource="{Binding Genres}"
+                        ItemDisplayBinding="{Binding Title}"
+                        SelectedItem="{Binding SelectedGenre}"/>
+
+                <Button Text="Search"
+                        Command="{Binding SearchCommand}"/>
+                <Button Text="Reset"
+                        Command="{Binding ResetCommand}"/>
+            </StackLayout>
+
+
+            <ListView
                 ItemsSource="{Binding Movies}" 
                 HasUnevenRows="True"
+                ItemTapped="OpenDetailsPage"
                 RowHeight="125">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -51,8 +77,7 @@
 
         </ListView>
 
-
-
+        </StackLayout>
 
     </ContentPage.Content>
 </ContentPage>

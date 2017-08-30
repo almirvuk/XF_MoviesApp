@@ -1,65 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XF_MoviesApp.Views.MovieDetailsPage">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XF_MoviesApp.Views.MovieDetailsPage" Title="About movie">
     <ContentPage.Content>
-
+        
         <StackLayout>
-
-
             <Grid>
-
+        
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition  Width="Auto"/>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition />
+                
                 </Grid.ColumnDefinitions>
-
-
-                <Image Grid.Column="0"
-                       Grid.Row="0"
-                       Margin="2"
-                       HeightRequest="120"
-                       Source="{Binding MoviePhotoUrl}" />
-
-                <StackLayout Grid.Column="1" Padding="4"
-                       Grid.Row="0"
-                             
-                                         Margin="2"
-                                         HorizontalOptions="Start">
-
-                    <Label Text="{Binding Title}" 
-                                       FontSize="Medium"/>
-
-
+                
+                <Image Grid.Column="0" Grid.Row="0" Margin="2" HeightRequest="120" Source="{Binding MoviePhotoUrl}" />
+                
+                <StackLayout Grid.Column="1" Padding="4" Grid.Row="0" Margin="2" HorizontalOptions="Start">
+                    <Label Text="{Binding Title}" FontSize="Medium" />
+                    <Label Text="{Binding GenreTitle}" FontSize="Medium" />
                 </StackLayout>
-
-               
-                <Image Grid.Column="0"
-                       Grid.Row="1"
-                       Margin="2"
-                       HeightRequest="120"
-                       Source="{Binding DirectorPhotoUrl}" />
-
-                <StackLayout Grid.Column="1" Padding="4"
-                       Grid.Row="1"
-                             
-                                         Margin="2"
-                                         HorizontalOptions="Start">
-
-                    <Label Text="{Binding DirectorName}" 
-                                       FontSize="Medium"/>
-
-
+                
+                <Image Grid.Column="0" Grid.Row="1" Margin="2" HeightRequest="120" Source="{Binding DirectorPhotoUrl}" />
+                <StackLayout Grid.Column="1" Padding="4" Grid.Row="1" Margin="2" HorizontalOptions="Start">
+                    <Label Text="{Binding DirectorName}" FontSize="Medium" />
                 </StackLayout>
-
             </Grid>
-
+            
+            <ListView ItemsSource="{Binding Actors}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding FullName}" />
+                                <Label Text="{Binding Age}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>
