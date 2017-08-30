@@ -81,19 +81,16 @@ namespace XF_MoviesApp.ViewModels {
 
         void RePopulateCollection() {
 
+            Movies.Clear();
+
             if (selectedGenre != null) {
 
                 var genreId = selectedGenre.GenreId;
-
-                Movies.Clear();
-
                 var filteredMovies = movieService.GetAllMoviesByGenre(genreId);
-
                 foreach (var movie in filteredMovies) 
                     Movies.Add(movie);
-            } else {
 
-                Movies.Clear();
+            } else {
 
                 var allMovies = movieService.GetAllMovies();
                 foreach (var movie in allMovies)
